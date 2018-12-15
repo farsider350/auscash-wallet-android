@@ -24,6 +24,7 @@ import java.util.Set;
 public enum CoinID {
     BITCOIN_MAIN(BitcoinMain.get()),
     LITECOIN_MAIN(LitecoinMain.get()),
+	AUSCASH_MAIN(com.coinomi.core.coins.AuscashMain.get()),
     ONIXCOIN_MAIN(OnixcoinMain.get()),
     ;
 

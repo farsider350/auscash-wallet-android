@@ -6,6 +6,7 @@ import com.onix.core.coins.BitcoinMain;
 import com.onix.core.coins.CoinID;
 import com.onix.core.coins.CoinType;
 import com.onix.core.coins.LitecoinMain;
+import com.coinomi.core.coins.AuscashMain;
 import com.onix.core.coins.OnixcoinMain;
 import com.onix.core.network.CoinAddress;
 import com.onix.stratumj.ServerAddress;
@@ -97,7 +98,11 @@ public class Constants {
             new CoinAddress(BitcoinMain.get(),      new ServerAddress("btc-cce-1.Coinomi.net", 5001),
                     new ServerAddress("btc-cce-2.Coinomi.net", 5001)),
             new CoinAddress(LitecoinMain.get(),     new ServerAddress("ltc-cce-1.Coinomi.net", 5002),
-                    new ServerAddress("ltc-cce-2.Coinomi.net", 5002))
+                    new ServerAddress("ltc-cce-2.Coinomi.net", 5002)
+            ),
+			new CoinAddress(AuscashMain.get(),
+                    new ServerAddress("australiacash.tk", 5044),
+                    new ServerAddress("45.32.244.142 ", 5044))
     );
 
     public static final HashMap<CoinType, Integer> COINS_ICONS;
@@ -107,8 +112,10 @@ public class Constants {
         COINS_ICONS.put(CoinID.ONIXCOIN_MAIN.getCoinType(), R.drawable.onixcoin);
         COINS_ICONS.put(CoinID.BITCOIN_MAIN.getCoinType(), R.drawable.bitcoin);
         COINS_ICONS.put(CoinID.LITECOIN_MAIN.getCoinType(), R.drawable.litecoin);
+        COINS_ICONS.put(CoinID.AUSCASH_MAIN.getCoinType(), R.drawable.auscash);
 
         COINS_BLOCK_EXPLORERS = new HashMap<CoinType, String>();
+        COINS_BLOCK_EXPLORERS.put(CoinID.AUSCASH_MAIN.getCoinType(), "http://auscashexplorer.tk/tx.dws?%s.htm");
         COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_MAIN.getCoinType(), "https://blockchain.info/tx/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.LITECOIN_MAIN.getCoinType(), "http://ltc.blockr.io/tx/info/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.ONIXCOIN_MAIN.getCoinType(), "https://insight.onixcoin.com/tx/%s");
@@ -122,6 +129,8 @@ public class Constants {
     public static final List<CoinType> SUPPORTED_COINS = ImmutableList.of(
             OnixcoinMain.get(),
             BitcoinMain.get(),
-            LitecoinMain.get()
+            LitecoinMain.get(),
+			AuscashMain.get()
+
     );
 }
