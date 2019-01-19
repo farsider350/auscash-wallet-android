@@ -6,7 +6,7 @@ import com.auscash.core.coins.BitcoinMain;
 import com.auscash.core.coins.CoinID;
 import com.auscash.core.coins.CoinType;
 import com.auscash.core.coins.LitecoinMain;
-import com.coinomi.core.coins.AuscashMain;
+import com.auscash.core.coins.AuscashMain;
 import com.auscash.core.network.CoinAddress;
 import com.auscash.stratumj.ServerAddress;
 import com.google.common.collect.ImmutableList;
@@ -94,9 +94,9 @@ public class Constants {
                     new ServerAddress("ltc-cce-2.Coinomi.net", 5002)
             ),
 			new CoinAddress(AuscashMain.get(),
-                    new ServerAddress("australiacash.tk", 50002),
-                    new ServerAddress("45.32.244.142 ", 50002),
-                    new ServerAddress("192.168.1.250", 50002))
+                    new ServerAddress("australiacash.tk", 5003),
+                    new ServerAddress("45.32.244.142 ", 5003),
+                    new ServerAddress("192.168.1.249", 5003))
     );
 
     public static final HashMap<CoinType, Integer> COINS_ICONS;
@@ -107,7 +107,7 @@ public class Constants {
         COINS_ICONS.put(CoinID.LITECOIN_MAIN.getCoinType(), R.drawable.litecoin);
         COINS_ICONS.put(CoinID.AUSCASH_MAIN.getCoinType(), R.drawable.auscash);
 
-        COINS_BLOCK_EXPLORERS = new HashMap<CoinType, String>();
+        COINS_BLOCK_EXPLORERS = new HashMap<>();
         COINS_BLOCK_EXPLORERS.put(CoinID.AUSCASH_MAIN.getCoinType(), "http://auscashexplorer.tk/tx/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_MAIN.getCoinType(), "https://blockchain.info/tx/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.LITECOIN_MAIN.getCoinType(), "http://ltc.blockr.io/tx/info/%s");

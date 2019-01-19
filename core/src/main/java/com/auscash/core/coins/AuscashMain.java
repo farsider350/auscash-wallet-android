@@ -1,11 +1,9 @@
-package com.coinomi.core.coins;
+package com.auscash.core.coins;
 
-import com.auscash.core.coins.CoinType;
-import com.auscash.core.coins.SoftDustPolicy;
 import com.auscash.core.coins.families.BitFamily;
 
 /**
- * @author John L. Jegutanis
+ * @author 
  */
 public class AuscashMain extends BitFamily {
     private AuscashMain() {
@@ -26,7 +24,7 @@ public class AuscashMain extends BitFamily {
         minNonDust = value(1000); // 0.00001 LTC mininput
         softDustLimit = value(100000); // 0.001 LTC
         softDustPolicy = SoftDustPolicy.BASE_FEE_FOR_EACH_SOFT_DUST_TXO;
-        signedMessageHeader = toBytes("Auscash Signed Message:\n");
+
     }
 
     private static AuscashMain instance = new AuscashMain();
